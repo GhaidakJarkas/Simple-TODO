@@ -1,0 +1,16 @@
+{% extends 'tasks/base.html' %}
+{% block content %}
+<div class="center-column">
+    <h3>Delete Confirmation</h3>
+
+    <p>Are you sure you want to delete {{item}}?</p>
+
+    <a class="btn btn-info" href="{% url 'index' %}">Cancel</a>
+    <span>
+    <form method="POST">
+        {% csrf_token %}
+        <input class="btn btn-danger" type="submit" value="Confirm">
+    </form>
+    </span>
+</div>
+{% endblock %}
